@@ -19,7 +19,7 @@ public class LoginPage extends ParentPage{
 
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/index.php?route=account/login");
     }
 
     public void openPage(){
