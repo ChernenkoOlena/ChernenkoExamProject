@@ -27,7 +27,7 @@ public class ActionsWithOurElements {
     public void clickOnElement(WebElement webElement) {
         try {
             webElement.click();
-            logger.info("Button was clicked");
+            logger.info("Element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest();
         }

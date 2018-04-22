@@ -6,8 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.AccountPage;
-import pages.LoginPage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -17,6 +16,13 @@ public class ParentTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
     protected AccountPage accountPage;
+    protected HomePage homePage;
+    protected MainPage mainPage;
+    protected OpelPage opelPage;
+    protected AmortisatoryOpel amortisatoryOpel;
+    protected SubAmortisatoryOpel subAmortisatoryOpel;
+    protected BasketWaitForPayment basketWaitForPayment;
+
     Logger logger = Logger.getLogger(getClass());
 
     @Before
@@ -29,6 +35,12 @@ public class ParentTest {
 
         loginPage = new LoginPage(webDriver);
         accountPage = new AccountPage(webDriver);
+        homePage = new HomePage(webDriver);
+        mainPage = new MainPage(webDriver);
+        opelPage = new OpelPage(webDriver);
+        amortisatoryOpel = new AmortisatoryOpel(webDriver);
+        subAmortisatoryOpel = new SubAmortisatoryOpel(webDriver);
+        basketWaitForPayment = new BasketWaitForPayment(webDriver);
     }
 
     @After
