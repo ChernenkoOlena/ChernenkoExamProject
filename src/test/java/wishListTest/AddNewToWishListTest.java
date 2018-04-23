@@ -14,11 +14,11 @@ public class AddNewToWishListTest extends ParentTest {
         homePage.clickOnMenuOpel();
         opelPage.getCurrentUrl();
         opelPage.clickOnSubMenuAmortisatory();
-        amortisatoryOpel.getCurrentUrl();
-        amortisatoryOpel.addNewFromSubMenuAmortisatoryGood4784();
-        subAmortisatoryOpel.getCurrentUrl();
-        subAmortisatoryOpel.clickOnButtonAddToWishList();
-        subAmortisatoryOpel.clickOnMenuWishList();
+        amortisatoryOpelPage.getCurrentUrl();
+        amortisatoryOpelPage.addNewFromSubMenuAmortisatoryGood4784();
+        subAmortisatoryOpelPage.getCurrentUrl();
+        subAmortisatoryOpelPage.clickOnButtonAddToWishList();
+        subAmortisatoryOpelPage.clickOnMenuWishList();
         wishListPage.getCurrentUrl();
 
 //        checkAC

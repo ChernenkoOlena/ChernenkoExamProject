@@ -14,11 +14,11 @@ public class AddNewToBasketTest extends ParentTest {
         homePage.clickOnMenuOpel();
         opelPage.getCurrentUrl();
         opelPage.clickOnSubMenuAmortisatory();
-        amortisatoryOpel.getCurrentUrl();
-        amortisatoryOpel.addNewFromSubMenuAmortisatoryGood4784();
-        subAmortisatoryOpel.getCurrentUrl();
-        subAmortisatoryOpel.clickOnButtonBuy();
-        subAmortisatoryOpel.clickOnButtonBasket();
+        amortisatoryOpelPage.getCurrentUrl();
+        amortisatoryOpelPage.addNewFromSubMenuAmortisatoryGood4784();
+        subAmortisatoryOpelPage.getCurrentUrl();
+        subAmortisatoryOpelPage.clickOnButtonBuy();
+        subAmortisatoryOpelPage.clickOnButtonBasket();
         basketWaitForPayment.getCurrentUrl();
 
 //        checkAC
