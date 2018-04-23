@@ -1,11 +1,11 @@
-package basketTest;
+package wishListTest;
 
 import org.junit.Test;
 import parentTest.ParentTest;
 
-public class AddNewToBasketTest extends ParentTest {
+public class AddNewToWishListTest extends ParentTest {
     @Test
-    public void addNewToBasketTest(){
+       public void addNewToWishListTest(){
         loginPage.userLogin("helen.cher6@gmail.com", "vesna18");
         accountPage.getCurrentUrl();
         accountPage.checkAvatarIsPresent();
@@ -17,14 +17,14 @@ public class AddNewToBasketTest extends ParentTest {
         amortisatoryOpelPage.getCurrentUrl();
         amortisatoryOpelPage.addNewFromSubMenuAmortisatoryGood4784();
         subAmortisatoryOpelPage.getCurrentUrl();
-        subAmortisatoryOpelPage.clickOnButtonBuy();
-        subAmortisatoryOpelPage.clickOnButtonBasket();
-        basketWaitForPayment.getCurrentUrl();
+        subAmortisatoryOpelPage.clickOnButtonAddToWishList();
+        subAmortisatoryOpelPage.clickOnMenuWishList();
+        wishListPage.getCurrentUrl();
 
 //        checkAC
 
-        basketWaitForPayment.getTheBasketEmpty();
-        setOrderingPage.getCurrentUrl();
-    }
+        wishListPage.clickOnButtonRemoveWishList();
+        wishListPage.getCurrentUrl();
 
+    }
 }
