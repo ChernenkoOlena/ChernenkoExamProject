@@ -15,16 +15,16 @@ public class AddNewToBasketTest extends ParentTest {
         opelPage.getCurrentUrl();
         opelPage.clickOnSubMenuAmortisatory();
         amortisatoryOpel.getCurrentUrl();
-        amortisatoryOpel.clickOnSubMenuAmortisatoryGoods();
+        amortisatoryOpel.addNewFromSubMenuAmortisatoryGood4784();
         subAmortisatoryOpel.getCurrentUrl();
         subAmortisatoryOpel.clickOnButtonBuy();
-        subAmortisatoryOpel.clickOnBasket();
+        subAmortisatoryOpel.clickOnButtonBasket();
         basketWaitForPayment.getCurrentUrl();
 
+//        checkAC
 
-
-
-
+        basketWaitForPayment.getTheBasketEmpty();
+        setOrderingPage.getCurrentUrl();
     }
 
 }

@@ -19,10 +19,11 @@ public class ParentTest {
     protected HomePage homePage;
     protected MainPage mainPage;
     protected OpelPage opelPage;
-    protected AmortisatoryOpel amortisatoryOpel;
-    protected SubAmortisatoryOpel subAmortisatoryOpel;
-    protected BasketWaitForPayment basketWaitForPayment;
+    protected AmortisatoryOpelPage amortisatoryOpel;
+    protected SubAmortisatoryOpelPage subAmortisatoryOpel;
+    protected BasketWaitForPaymentPage basketWaitForPayment;
     protected LogOutPage logOutPage;
+    protected SetOrderingPage setOrderingPage;
 
     Logger logger = Logger.getLogger(getClass());
 
@@ -39,10 +40,11 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         mainPage = new MainPage(webDriver);
         opelPage = new OpelPage(webDriver);
-        amortisatoryOpel = new AmortisatoryOpel(webDriver);
-        subAmortisatoryOpel = new SubAmortisatoryOpel(webDriver);
-        basketWaitForPayment = new BasketWaitForPayment(webDriver);
+        amortisatoryOpel = new AmortisatoryOpelPage(webDriver);
+        subAmortisatoryOpel = new SubAmortisatoryOpelPage(webDriver);
+        basketWaitForPayment = new BasketWaitForPaymentPage(webDriver);
         logOutPage = new LogOutPage(webDriver);
+        setOrderingPage = new SetOrderingPage(webDriver);
     }
 
     @After
