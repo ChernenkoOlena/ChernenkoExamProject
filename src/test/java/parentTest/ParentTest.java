@@ -22,6 +22,7 @@ public class ParentTest {
     protected AmortisatoryOpel amortisatoryOpel;
     protected SubAmortisatoryOpel subAmortisatoryOpel;
     protected BasketWaitForPayment basketWaitForPayment;
+    protected LogOutPage logOutPage;
 
     Logger logger = Logger.getLogger(getClass());
 
@@ -41,6 +42,7 @@ public class ParentTest {
         amortisatoryOpel = new AmortisatoryOpel(webDriver);
         subAmortisatoryOpel = new SubAmortisatoryOpel(webDriver);
         basketWaitForPayment = new BasketWaitForPayment(webDriver);
+        logOutPage = new LogOutPage(webDriver);
     }
 
     @After
