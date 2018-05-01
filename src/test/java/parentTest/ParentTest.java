@@ -21,7 +21,7 @@ public class ParentTest {
     protected OpelPage opelPage;
     protected AmortisatoryOpelPage amortisatoryOpelPage;
     protected SubAmortisatoryOpelPage subAmortisatoryOpelPage;
-    protected BasketWaitForPaymentPage basketWaitForPayment;
+    protected BasketWaitForPaymentPage basketWaitForPaymentPage;
     protected LogOutPage logOutPage;
     protected SetOrderingPage setOrderingPage;
     protected WishListPage wishListPage;
@@ -44,7 +44,7 @@ public class ParentTest {
         opelPage = new OpelPage(webDriver);
         amortisatoryOpelPage = new AmortisatoryOpelPage(webDriver);
         subAmortisatoryOpelPage = new SubAmortisatoryOpelPage(webDriver);
-        basketWaitForPayment = new BasketWaitForPaymentPage(webDriver);
+        basketWaitForPaymentPage = new BasketWaitForPaymentPage(webDriver);
         logOutPage = new LogOutPage(webDriver);
         setOrderingPage = new SetOrderingPage(webDriver);
         wishListPage = new WishListPage(webDriver);
