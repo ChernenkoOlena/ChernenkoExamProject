@@ -2,17 +2,22 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger;
+    WebDriverWait webDriverWait15;
 
     public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
+        webDriverWait15 = new WebDriverWait(webDriver, 15);
     }
 
     public void enterTextIntoElement(WebElement webElement, String text) {
@@ -27,6 +32,7 @@ public class ActionsWithOurElements {
 
     public void clickOnElement(WebElement webElement) {
         try {
+            webDriverWait15.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
             logger.info("Element was clicked");
         } catch (Exception e) {
@@ -41,7 +47,15 @@ public class ActionsWithOurElements {
 
     public boolean isElementPresent(WebElement webElement) {
         try {
-            return webElement.isDisplayed() && webElement.isEnabled();
+            return webElement.isEnabled() && webElement.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean isElementEnable(WebElement webElement) {
+        try {
+            return webElement.isEnabled() ;
         }catch (Exception e){
             return false;
         }
@@ -63,4 +77,45 @@ public class ActionsWithOurElements {
         }
     }
 
+    public void setCheckBoxToNeededState(WebElement webElement, String neededState) {
+        try {
+            boolean isCheckState = "check".equals(neededState);
+            boolean isUnCheckState = "uncheck".equals(neededState);
+            if (isCheckState || isUnCheckState) {
+                if(webElement.isSelected() && isCheckState ){
+                    logger.info("Checkbox is already checked");
+                }else if (webElement.isSelected() && isUnCheckState){
+                    clickOnElement(webElement);
+                }else  if (!webElement.isSelected() && isCheckState){
+                    clickOnElement(webElement);
+                }else  if(!webElement.isSelected() && isUnCheckState){
+                    logger.info("Checkbox is already unchecked");
+                }
+            } else {
+                logger.error(neededState + " Should be 'check' or 'uncheck' ");
+                Assert.fail(neededState + " Should be 'check' or 'uncheck' ");
+            }
+        } catch (Exception e) {
+            printErrorAndStopTest();
+        }
+    }
+
+
+    public boolean isElementPresent(String locator) {
+        try {
+            WebElement webElement = webDriver.findElement(By.xpath(locator));
+            return isElementPresent(webElement);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isElementEnable(String locator) {
+        try {
+            WebElement webElement = webDriver.findElement(By.xpath(locator));
+            return isElementEnable(webElement);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
