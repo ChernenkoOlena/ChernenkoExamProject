@@ -29,8 +29,9 @@ public class AddNewToWishListTest extends ParentTest {
 
  @After
  public void deleteNewWish(){
-   wishListPage.clickOnButtonRemoveWishList();
+  wishListPage.deletingAllGoodsWithName(nameOfNewGood4784);
   }
+
  }
 
 

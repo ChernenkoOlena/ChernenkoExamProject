@@ -9,10 +9,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger;
     WebDriverWait webDriverWait15;
+    WebDriverWait webDriverWait20;
 
     public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -115,6 +118,19 @@ public class ActionsWithOurElements {
             WebElement webElement = webDriver.findElement(By.xpath(locator));
             return isElementEnable(webElement);
         } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isElementInList(String locator) {
+        try{
+            List<WebElement> listOfElements = webDriver.findElements(By.xpath(locator));
+            if(listOfElements.size()> 0){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
             return false;
         }
     }

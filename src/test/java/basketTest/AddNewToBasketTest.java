@@ -8,7 +8,7 @@ public class AddNewToBasketTest extends ParentTest {
     final String nameOfAmortisator4784 = "Амортизатор  крышки багажника Opel Ascona C  512-200mm 450N";
 
     @Test
-    public void addNewToBasketTest(){
+    public void addNewToBasketTest() {
         loginPage.userLogin("helen.cher6@gmail.com", "vesna18");
         accountPage.getCurrentUrl();
         accountPage.checkAvatarIsPresent();
@@ -22,14 +22,17 @@ public class AddNewToBasketTest extends ParentTest {
         subAmortisatoryOpelPage.getCurrentUrl();
         subAmortisatoryOpelPage.clickOnButtonBuy();
         subAmortisatoryOpelPage.clickOnButtonBasket();
-        basketWaitForPayment.getCurrentUrl();
+        basketWaitForPaymentPage.getCurrentUrl();
 
-        checkAC("New Good wasn't added", basketWaitForPayment.isNewGoodAdded(nameOfAmortisator4784), true);
-     }
+        checkAC("New Good wasn't added", basketWaitForPaymentPage.isNewGoodAdded(nameOfAmortisator4784), true);
+    }
 
-//    @After
-//    public void deleteAddedFromBasket() {
-//        basketWaitForPayment.clickOnButtonDelete();
-//    }
+    @After
+    public void deleteAddedFromBasket() {
+        while (basketWaitForPaymentPage.isGoodInList(nameOfAmortisator4784)) {
+            basketWaitForPaymentPage.clickOnButtonDelete();
+            basketCheckOutPage.getCurrentUrl();
+        }
+    }
+
 }
-

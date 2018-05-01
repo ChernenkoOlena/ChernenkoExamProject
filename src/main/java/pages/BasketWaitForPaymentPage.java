@@ -22,4 +22,8 @@ public class BasketWaitForPaymentPage extends ParentPage {
     public void clickOnButtonDelete() {
         actionsWithOurElements.clickOnElement(removeButton);
     }
+
+    public boolean isGoodInList(String nameOfAmortisator4784) {
+        return actionsWithOurElements.isElementInList(".//*[contains(text(),'"+ nameOfAmortisator4784 +"')]");
+    }
 }
