@@ -25,6 +25,7 @@ public class ParentTest {
     protected LogOutPage logOutPage;
     protected SetOrderingPage setOrderingPage;
     protected WishListPage wishListPage;
+    protected BasketCheckOutPage basketCheckOutPage;
 
     Logger logger = Logger.getLogger(getClass());
 
@@ -47,6 +48,7 @@ public class ParentTest {
         logOutPage = new LogOutPage(webDriver);
         setOrderingPage = new SetOrderingPage(webDriver);
         wishListPage = new WishListPage(webDriver);
+        basketCheckOutPage = new BasketCheckOutPage(webDriver);
     }
 
     @After

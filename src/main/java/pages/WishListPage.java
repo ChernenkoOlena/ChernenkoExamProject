@@ -15,4 +15,9 @@ public class WishListPage extends ParentPage {
     public void clickOnButtonRemoveWishList() {
         actionsWithOurElements.clickOnElement(buttonRemove);
     }
+
+
+    public boolean isNewWishAdded(String nameOfNewGood4784) {
+        return actionsWithOurElements.isElementEnable(".//*[contains(text(),'"+ nameOfNewGood4784 +"')]");
+    }
 }
