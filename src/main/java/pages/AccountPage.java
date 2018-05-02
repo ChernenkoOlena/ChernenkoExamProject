@@ -16,6 +16,9 @@ public class AccountPage extends ParentPage {
     @FindBy(xpath = ".//a[@href='http://kemp.ua/index.php?route=account/logout'][contains(text(),'Выйти')]")
     private WebElement buttonExit;
 
+    @FindBy(xpath = ".//*[contains(text(),'Изменить свой пароль')]")
+    private WebElement changePass;
+
 
     public AccountPage(WebDriver webDriver) {
         super(webDriver, "/index.php?route=account/account");
@@ -36,5 +39,9 @@ public class AccountPage extends ParentPage {
 
     public void clickOnButtonExit() {
         actionsWithOurElements.clickOnElement(buttonExit);
+    }
+
+    public void clickOnChangePass() {
+        actionsWithOurElements.clickOnElement(changePass);
     }
 }
