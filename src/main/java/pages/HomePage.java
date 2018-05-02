@@ -9,6 +9,8 @@ public class HomePage extends ParentPage {
     private WebElement menuOpel;
     @FindBy(xpath = "//a[@href='http://kemp.ua/index.php?route=checkout/simplecheckout'][contains(text(),'Корзина покупок')]")
     private WebElement menuBasket;
+    @FindBy(id = "wishlist-total")
+    private WebElement menuWishesList;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver, "/index.php?route=common/home");
@@ -20,5 +22,9 @@ public class HomePage extends ParentPage {
 
     public void clickOnMenuBasket() {
         actionsWithOurElements.clickOnElement(menuBasket);
+    }
+
+    public void clickOnMenuWishesList() {
+        actionsWithOurElements.clickOnElement(menuWishesList);
     }
 }

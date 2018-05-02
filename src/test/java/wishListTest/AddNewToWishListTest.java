@@ -14,6 +14,11 @@ public class AddNewToWishListTest extends ParentTest {
         accountPage.checkAvatarIsPresent();
         accountPage.clickOnButtonHomePage();
         homePage.checkCurrentUrl();
+        homePage.clickOnMenuWishesList();
+        wishListPage.getCurrentUrl();
+        wishListPage.deletingAllGoodsWithName(nameOfNewGood4784);
+        wishListPage.clickOnMenuHomePage();
+        homePage.getCurrentUrl();
         homePage.clickOnMenuOpel();
         opelPage.getCurrentUrl();
         opelPage.clickOnSubMenuAmortisatory();
