@@ -14,6 +14,11 @@ public class AddNewToBasketTest extends ParentTest {
         accountPage.checkAvatarIsPresent();
         accountPage.clickOnButtonHomePage();
         homePage.checkCurrentUrl();
+        homePage.clickOnMenuBasket();
+        basketWaitForPaymentPage.getCurrentUrl();
+        basketWaitForPaymentPage.deletingAllGoodsWithName(nameOfAmortisator4784);
+        basketWaitForPaymentPage.clickOnMenuHomePage();
+        homePage.getCurrentUrl();
         homePage.clickOnMenuOpel();
         opelPage.getCurrentUrl();
         opelPage.clickOnSubMenuAmortisatory();

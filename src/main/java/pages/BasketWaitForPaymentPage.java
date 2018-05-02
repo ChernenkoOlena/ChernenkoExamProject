@@ -10,6 +10,9 @@ public class BasketWaitForPaymentPage extends ParentPage {
 
     private BasketCheckOutPage basketCheckOutPage;
 
+    @FindBy(xpath = ".//a[@href='http://kemp.ua/index.php?route=common/home'][contains(text(),'Главная')]")
+    private WebElement menuHomePage;
+
     public BasketWaitForPaymentPage(WebDriver webDriver) {
         super(webDriver, "/index.php?route=checkout/simplecheckout#wait_for_payment");
         basketCheckOutPage = new BasketCheckOutPage(webDriver);
@@ -42,4 +45,7 @@ public class BasketWaitForPaymentPage extends ParentPage {
         }
     }
 
+    public void clickOnMenuHomePage() {
+        actionsWithOurElements.clickOnElement(menuHomePage);
+    }
 }
