@@ -8,9 +8,11 @@ public class BasketWaitForPaymentPage extends ParentPage {
     @FindBy(xpath = ".//img[@src='catalog/view/image/close.png']")
     private WebElement removeButton;
 
+    private BasketCheckOutPage basketCheckOutPage;
 
     public BasketWaitForPaymentPage(WebDriver webDriver) {
         super(webDriver, "/index.php?route=checkout/simplecheckout#wait_for_payment");
+        basketCheckOutPage = new BasketCheckOutPage(webDriver);
     }
 
 
@@ -26,4 +28,18 @@ public class BasketWaitForPaymentPage extends ParentPage {
     public boolean isGoodInList(String nameOfAmortisator4784) {
         return actionsWithOurElements.isElementInList(".//*[contains(text(),'"+ nameOfAmortisator4784 +"')]");
     }
+
+    public void deletingAllGoodsWithName(String nameOfAmortisator4784){
+        while (isGoodInList(nameOfAmortisator4784)) {
+            clickOnButtonDelete();
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            basketCheckOutPage.getCurrentUrl();
+            logger.info("Good with name " + nameOfAmortisator4784 + " was deleted");
+        }
+    }
+
 }

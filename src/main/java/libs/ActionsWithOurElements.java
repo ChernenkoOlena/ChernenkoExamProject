@@ -64,6 +64,15 @@ public class ActionsWithOurElements {
         }
     }
 
+    public boolean isElementDisplayed(WebElement webElement) {
+        try {
+            return webElement.isDisplayed() ;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+
     /**
      * Method select value in DD
      *
@@ -121,6 +130,17 @@ public class ActionsWithOurElements {
             return false;
         }
     }
+
+    public boolean isElementDisplayd(String locator) {
+        try {
+            WebElement webElement = webDriver.findElement(By.xpath(locator));
+            return isElementEnable(webElement);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
 
     public boolean isElementInList(String locator) {
         try{
