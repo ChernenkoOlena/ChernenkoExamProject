@@ -29,10 +29,7 @@ public class AddNewToBasketTest extends ParentTest {
 
     @After
     public void deleteAddedFromBasket() {
-        while (basketWaitForPaymentPage.isGoodInList(nameOfAmortisator4784)) {
-            basketWaitForPaymentPage.clickOnButtonDelete();
-            basketCheckOutPage.getCurrentUrl();
-        }
+        basketWaitForPaymentPage.deletingAllGoodsWithName(nameOfAmortisator4784);
     }
 
 }
