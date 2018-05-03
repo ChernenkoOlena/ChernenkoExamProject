@@ -12,7 +12,7 @@ public class AmortisatoryOpelPage extends ParentPage {
         super(webDriver, "/2-OPEL/2,1-Amortizatory");
     }
 
-    public void addNewFromSubMenuAmortisatoryGood4784() {
+    public void addNewFromSubMenuAmortisatoryItem4784() {
         actionsWithOurElements.clickOnElement(amortisatoryGood4784);
     }
 }

@@ -19,7 +19,7 @@ public class BasketWaitForPaymentPage extends ParentPage {
     }
 
 
-    public boolean isNewGoodAdded(String nameOfAmortisator4784) {
+    public boolean isNewItemAdded(String nameOfAmortisator4784) {
         return actionsWithOurElements.isElementEnable(".//*[contains(text(),'"+ nameOfAmortisator4784 +"')]");
     }
 
@@ -32,7 +32,7 @@ public class BasketWaitForPaymentPage extends ParentPage {
         return actionsWithOurElements.isElementInList(".//*[contains(text(),'"+ nameOfAmortisator4784 +"')]");
     }
 
-    public void deletingAllGoodsWithName(String nameOfAmortisator4784){
+    public void deletingAllItemsWithName(String nameOfAmortisator4784){
         while (isGoodInList(nameOfAmortisator4784)) {
             clickOnButtonDelete();
             try {
