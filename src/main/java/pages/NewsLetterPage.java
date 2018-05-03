@@ -9,16 +9,22 @@ public class NewsLetterPage extends ParentPage {
     private WebElement yesButton;
     @FindBy(xpath = ".//input[@type='submit']")
     private WebElement buttonContinue;
+    @FindBy(xpath = ".//tr/td[2]/input[2]")
+    private WebElement noButton;
 
     public NewsLetterPage(WebDriver webDriver) {
         super(webDriver, "/index.php?route=account/newsletter");
     }
 
-    public void clickOnYesOrNoButton() {
+    public void clickOnYesButton() {
         actionsWithOurElements.clickOnElement(yesButton);
     }
 
     public void clickOnElementContinue() {
         actionsWithOurElements.clickOnElement(buttonContinue);
+    }
+
+    public void clickOnNoButton() {
+        actionsWithOurElements.clickOnElement(noButton);
     }
 }
