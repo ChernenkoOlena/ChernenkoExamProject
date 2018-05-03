@@ -19,6 +19,12 @@ public class AccountPage extends ParentPage {
     @FindBy(xpath = ".//*[contains(text(),'Изменить свой пароль')]")
     private WebElement changePass;
 
+    @FindBy(xpath = ".//*[contains(text(),'E-Mail рассылка')]")
+    private WebElement EmailSending;
+
+    @FindBy(xpath = ".//*[@class='success']")
+    private WebElement notification;
+
 
     public AccountPage(WebDriver webDriver) {
         super(webDriver, "/index.php?route=account/account");
@@ -43,5 +49,13 @@ public class AccountPage extends ParentPage {
 
     public void clickOnChangePass() {
         actionsWithOurElements.clickOnElement(changePass);
+    }
+
+    public void clickOnSubMenuEmailSending() {
+        actionsWithOurElements.clickOnElement(EmailSending);
+    }
+
+    public boolean isNotificationPresent() {
+        return actionsWithOurElements.isElementPresent(notification);
     }
 }

@@ -18,25 +18,25 @@ public class AddNewToBasketTest extends ParentTest {
         homePage.checkCurrentUrl();
         homePage.clickOnMenuBasket();
         basketWaitForPaymentPage.getCurrentUrl();
-        basketWaitForPaymentPage.deletingAllGoodsWithName(nameOfAmortisator4784);
+        basketWaitForPaymentPage.deletingAllItemsWithName(nameOfAmortisator4784);
         basketWaitForPaymentPage.clickOnMenuHomePage();
         homePage.getCurrentUrl();
         homePage.clickOnMenuOpel();
         opelPage.getCurrentUrl();
         opelPage.clickOnSubMenuAmortisatory();
         amortisatoryOpelPage.getCurrentUrl();
-        amortisatoryOpelPage.addNewFromSubMenuAmortisatoryGood4784();
+        amortisatoryOpelPage.addNewFromSubMenuAmortisatoryItem4784();
         subAmortisatoryOpelPage.getCurrentUrl();
         subAmortisatoryOpelPage.clickOnButtonBuy();
         subAmortisatoryOpelPage.clickOnButtonBasket();
         basketWaitForPaymentPage.getCurrentUrl();
 
-        checkAC("New Good wasn't added", basketWaitForPaymentPage.isNewGoodAdded(nameOfAmortisator4784), true);
+        checkAC("New Good wasn't added", basketWaitForPaymentPage.isNewItemAdded(nameOfAmortisator4784), true);
     }
 
     @After
     public void deleteAddedFromBasket() {
-        basketWaitForPaymentPage.deletingAllGoodsWithName(nameOfAmortisator4784);
+        basketWaitForPaymentPage.deletingAllItemsWithName(nameOfAmortisator4784);
     }
 
 }

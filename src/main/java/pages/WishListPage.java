@@ -23,7 +23,7 @@ public class WishListPage extends ParentPage {
         return actionsWithOurElements.isElementEnable(".//*[contains(text(),'"+ nameOfNewGood4784 +"')]");
     }
 
-    public void deletingAllGoodsWithName(String nameOfNewGood4784){
+    public void deletingAllItemsWithName(String nameOfNewGood4784){
         while (isWishInList(nameOfNewGood4784)) {
             clickOnButtonRemoveWishList();
             logger.info("Good with name " + nameOfNewGood4784 + " was deleted");
