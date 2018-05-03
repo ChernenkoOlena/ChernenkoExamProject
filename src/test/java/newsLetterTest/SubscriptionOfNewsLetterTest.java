@@ -1,5 +1,6 @@
 package newsLetterTest;
 
+import org.junit.After;
 import org.junit.Test;
 import parentTest.ParentTest;
 
@@ -8,17 +9,29 @@ public class SubscriptionOfNewsLetterTest extends ParentTest {
     final String pass = "vesna18";
 
     @Test
-    public void SubscriptionOfNewsLetterTest(){
+    public void subscriptionOfNewsLetterTest(){
         loginPage.userLogin(login, pass);
         accountPage.getCurrentUrl();
         accountPage.checkAvatarIsPresent();
         accountPage.clickOnSubMenuEmailSending();
         newsLetterPage.getCurrentUrl();
-        newsLetterPage.clickOnYesOrNoButton();
+        newsLetterPage.clickOnYesButton();
         newsLetterPage.clickOnElementContinue();
         accountPage.getCurrentUrl();
 
         checkAC("Notification is not present", accountPage.isNotificationPresent(), true);
 
+    }
+
+    @After
+    public void unSubscriptionOfNewsLetterTest(){
+        accountPage.checkAvatarIsPresent();
+        accountPage.clickOnSubMenuEmailSending();
+        newsLetterPage.getCurrentUrl();
+        newsLetterPage.clickOnNoButton();
+        newsLetterPage.clickOnElementContinue();
+        accountPage.getCurrentUrl();
+
+        checkAC("Notification is not present", accountPage.isNotificationPresent(), true);
     }
 }
