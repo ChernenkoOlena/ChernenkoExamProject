@@ -6,9 +6,12 @@ import pages.ParentPage;
 import parentTest.ParentTest;
 
 public class LogOutTest extends ParentTest {
+    final String login = "helen.cher6@gmail.com";
+    final String pass = "vesna18";
+
     @Test
     public void logOutTest(){
-        loginPage.userLogin("helen.cher6@gmail.com", "vesna18");
+        loginPage.userLogin(login, pass);
         accountPage.getCurrentUrl();
         accountPage.clickOnButtonExit();
         logOutPage.getCurrentUrl();

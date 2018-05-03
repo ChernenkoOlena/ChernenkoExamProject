@@ -5,12 +5,15 @@ import org.junit.Test;
 import parentTest.ParentTest;
 
 public class LoginTestWithPageObject extends ParentTest{
+    final String login = "helen.cher6@gmail.com";
+    final String pass = "vesna18";
+    final String wrongPass = "vesna17";
 
     @Test
     public void validLogin(){
         loginPage.openPage();
-        loginPage.enterLogin("helen.cher6@gmail.com");
-        loginPage.enterPassword("vesna18");
+        loginPage.enterLogin(login);
+        loginPage.enterPassword(pass);
         loginPage.clickSubmitButton();
 
         checkAC ("Avatar is not present",accountPage.isAvatarPresent(), true);
@@ -18,7 +21,7 @@ public class LoginTestWithPageObject extends ParentTest{
 
     @Test
     public void invalidLogin(){
-        loginPage.userLogin("helen.cher6@gmail.com", "vesna17");
+        loginPage.userLogin(login, wrongPass);
 
         checkAC("Avatar should not be present", accountPage.isAvatarPresent(), false);
     }

@@ -6,10 +6,12 @@ import parentTest.ParentTest;
 
 public class AddNewToBasketTest extends ParentTest {
     final String nameOfAmortisator4784 = "Амортизатор  крышки багажника Opel Ascona C  512-200mm 450N";
+    final String login = "helen.cher6@gmail.com";
+    final String pass = "vesna18";
 
     @Test
     public void addNewToBasketTest() {
-        loginPage.userLogin("helen.cher6@gmail.com", "vesna18");
+        loginPage.userLogin(login, pass);
         accountPage.getCurrentUrl();
         accountPage.checkAvatarIsPresent();
         accountPage.clickOnButtonHomePage();
