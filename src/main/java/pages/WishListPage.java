@@ -26,7 +26,7 @@ public class WishListPage extends ParentPage {
     public void deletingAllItemsWithName(String nameOfNewGood4784){
         while (isWishInList(nameOfNewGood4784)) {
             clickOnButtonRemoveWishList();
-            logger.info("Good with name " + nameOfNewGood4784 + " was deleted");
+            logger.info("Item with name " + nameOfNewGood4784 + " was deleted");
         }
     }
 
