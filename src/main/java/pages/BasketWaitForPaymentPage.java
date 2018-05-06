@@ -41,7 +41,7 @@ public class BasketWaitForPaymentPage extends ParentPage {
                 e.printStackTrace();
             }
             basketCheckOutPage.getCurrentUrl();
-            logger.info("Good with name " + nameOfAmortisator4784 + " was deleted");
+            logger.info("Item with name " + nameOfAmortisator4784 + " was deleted");
         }
     }
 
